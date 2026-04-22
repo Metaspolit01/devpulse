@@ -1,0 +1,45 @@
+// Version: 1.0.0
+type BugSeverity__1031207361 = {#critical; #high; #low; #medium};
+type Bug__933933854 =
+  {createdAt : Int; id : Nat; severity : BugSeverity__1031207361};
+type DeploymentEnv__199413963 = {#production; #staging};
+type Deployment__15846266 =
+  {deployedAt : Int; environment : DeploymentEnv__199413963; id : Nat};
+type IssueStatus__756661296 = {#done; #inProgress; #todo};
+type Issue__609737722 =
+  {
+    completedAt : Int;
+    id : Nat;
+    startedAt : Int;
+    status : IssueStatus__756661296
+  };
+type Nat__490723111 = Nat__920180692;
+type Nat__920180692 = Nat;
+type PR__528078657 =
+  {deployedAt : Int; id : Nat; mergedAt : Int; openedAt : Int};
+actor {
+  stable bugs :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Bug__933933854]];
+      var elementIndex : Nat__490723111
+    };
+  stable deployments :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Deployment__15846266]];
+      var elementIndex : Nat__490723111
+    };
+  stable issues :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?Issue__609737722]];
+      var elementIndex : Nat__490723111
+    };
+  stable prs :
+    {
+      var blockIndex : Nat__490723111;
+      var blocks : [var [var ?PR__528078657]];
+      var elementIndex : Nat__490723111
+    }
+};

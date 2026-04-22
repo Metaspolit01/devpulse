@@ -1,0 +1,59 @@
+type Severity = 
+ variant {
+   critical;
+   info;
+   warning;
+ };
+type RecommendationsResult = record {recommendations: vec Recommendation;};
+type Recommendation = 
+ record {
+   action: text;
+   estimatedImpact: text;
+   metricName: text;
+   priority: Priority;
+   rationale: text;
+ };
+type Priority = 
+ variant {
+   high;
+   low;
+   medium;
+ };
+type Period = text;
+type MetricsResult = 
+ record {
+   bugRate: MetricValue;
+   cycleTime: MetricValue;
+   deploymentFrequency: MetricValue;
+   leadTime: MetricValue;
+   prThroughput: nat;
+   prThroughputStatus: MetricStatus;
+   prThroughputTrend: float64;
+ };
+type MetricValue = 
+ record {
+   status: MetricStatus;
+   trend: float64;
+   unit: text;
+   value: float64;
+ };
+type MetricStatus = 
+ variant {
+   critical;
+   good;
+   warning;
+ };
+type InsightsResult = record {insights: vec Insight;};
+type Insight = 
+ record {
+   description: text;
+   metricName: text;
+   severity: Severity;
+   title: text;
+ };
+service : {
+  getInsights: (period: Period) -> (InsightsResult) query;
+  getMetrics: (period: Period) -> (MetricsResult) query;
+  getRecommendations: (period: Period) -> (RecommendationsResult) query;
+  refreshData: () -> ();
+}

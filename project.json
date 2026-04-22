@@ -1,0 +1,21 @@
+{
+  "overview": "DevPulse is a developer productivity dashboard that goes beyond raw numbers — it shows you 5 key engineering metrics, explains why they look the way they do, and tells you exactly what to do next to improve.",
+  "features": [
+    "5 metric cards: Lead Time, Cycle Time, Bug Rate, Deployment Frequency, PR Throughput",
+    "Color-coded health badges (green/yellow/red) per metric",
+    "Insight panel explaining the root cause behind each metric value",
+    "Actionable recommendations with priority levels",
+    "Time period selector (30-day, 90-day, 12-month)",
+    "Expandable metric cards with trend sparklines",
+    "Skeleton loading state for smooth experience"
+  ],
+  "category": "productivity",
+  "tags": [
+    "developer-tools",
+    "productivity",
+    "metrics",
+    "dashboard",
+    "insights"
+  ],
+  "last_updated": "2026-04-22T07:08:20.237Z"
+}
