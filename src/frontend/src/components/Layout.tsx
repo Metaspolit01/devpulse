@@ -70,25 +70,6 @@ export function Layout({ children, period, onPeriodChange }: LayoutProps) {
 
       {/* ── Main content ── */}
       <main className="flex-1 bg-background">{children}</main>
-
-      {/* ── Footer ── */}
-      <footer className="bg-muted/40 border-t border-border">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-10 flex items-center justify-center">
-          <p className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()}. Built with love using{" "}
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(
-                typeof window !== "undefined" ? window.location.hostname : "",
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-foreground transition-colors duration-200"
-            >
-              caffeine.ai
-            </a>
-          </p>
-        </div>
-      </footer>
     </div>
   );
 }
